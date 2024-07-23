@@ -25,7 +25,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/product/{id}', [ProductDetailController::class, 'show']);
+Route::get('/product/{product_code}', [ProductDetailController::class, 'show']);
 
 
 // testing

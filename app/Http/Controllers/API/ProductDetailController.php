@@ -51,7 +51,7 @@ class ProductDetailController extends Controller
      */
     public function show($id)
     {
-        $product = ProductDetail::findOrFail($id);
+        $product = ProductDetail::where(["product_code" => $id])->first();
         return response()->json($product);
     }
 
@@ -76,10 +76,9 @@ class ProductDetailController extends Controller
             'description' => 'sometimes|string',
         ]);
 
-        $product = ProductDetail::findOrFail($id);
+        $product = ProductDetail::where(["product_code" => $id])->first();
         $product->update($validated);
         return response()->json($product);
-
     }
 
     /**
@@ -87,7 +86,7 @@ class ProductDetailController extends Controller
      */
     public function destroy($id)
     {
-        $product = ProductDetail::findOrFail($id);
+        $product = ProductDetail::where(["product_code" => $id])->first();
         $product->delete();
 
         return response()->json(null, 204);
