@@ -1,3 +1,12 @@
-.container{
+.container {
     padding: 20px;
+}
+
+.container .product-details {
+    display: flex;
+}
+
+.container .product-details .logo {
+    max-width: 100%;
+    height: auto;
 }
